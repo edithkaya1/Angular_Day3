@@ -1,0 +1,25 @@
+.card {
+    width: 25rem;
+    height: auto;
+}
+
+.card-header {
+    font-size: 1.5rem;
+    background-color: #73298e;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.card-img {
+    width: 15rem;
+    height: 12rem;
+}
+
+.card-title {
+    color: #058240;
+}
+
+.btn-info {
+    background-color: #638b59; 
+    color: whitesmoke; 
+}

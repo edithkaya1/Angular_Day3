@@ -1,0 +1,24 @@
+<div class="container-fluid cont-1">
+    <h3 class=" header text-center">Your shopping list</h3>
+    @for(animal of animalsFromCart; track $index)
+    {
+    <div class='row d-flex align-items-center shop mx-4'>
+        <div class='col-2'>
+            <img [src]="animal.img" class='img-fluid shop-img' alt='this is an image'>
+        </div>
+        <div class='col-4'>
+            <h5 class='mb-2 fs-5'>{{animal.productName}}</h5>
+        </div>
+        <div class='col-3 d-flex'>
+            <button class='btn btn-success plusBtns'>+</button>
+            <h5 class='m-2 quantity'>{{animal.quantity}}</h5>
+            <button class='btn btn-success minusBtns'>-</button>
+        </div>
+        <div class='col-2'>
+            <h5 class='mb-2 rowPrice fs-5'>{{(animal.price * animal.quantity).toFixed(2)}} €</h5>
+        </div>
+        <hr>
+    </div> 
+    }
+    <h3 class="header text-center">Total Price: {{ total | currency:"EUR" }}</h3>
+</div>

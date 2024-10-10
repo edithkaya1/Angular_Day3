@@ -1,0 +1,13 @@
+<div class="container-fluid detail-cont">
+
+    <img class="card-img" [src]="animal.img" alt="this is an image">
+    <hr>
+    <h2 class="header">You selected a product for a {{animal.animalType}}</h2>
+    <h4 class="header1">{{ animal.brand }}</h4>
+    <p class="text1">{{ animal.productCategory }}</p>
+    <p class="text">Package weight: {{ animal.weight }}kg</p>
+    <p class="text">Price: {{animal.price|currency:"EUR"}}</p>
+    <p class="text">Description: {{animal.description}}</p>
+    <button (click)="addToCart()" class="btn btn-lg btn-outline-secondary my-3">Buy!</button>
+</div>
+
