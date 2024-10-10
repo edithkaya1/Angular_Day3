@@ -15,4 +15,25 @@ export class CartComponent {
     console.log(this.animalsFromCart);
     this.total = cartService.getTotal()
   }
+
+  increaseQutty(index:number): void{
+    this.cartService.onIncreaseQutty(index);
+    this.calcTotal();
+  }
+
+  decreaseQutty(index:number): void{
+    this.cartService.onDecreaseQutty(index);
+    this.calcTotal();
+  }
+
+  deleteItem(index:number): void{
+    this.cartService.onDeleteItem(index);
+    this.calcTotal();
+  }
+
+  calcTotal(): void{
+    this.total = this.cartService.getTotal()
+  }
+
+
 }

@@ -10,7 +10,10 @@
                   <h5 class="card-title">{{item.brand}}</h5>
                   <p class="card-text text-uppercase fw-bold">{{item.productName}}</p>
                   <p class="card-text">{{item.price|currency:"EUR"}}</p>
-                  <a routerLink="/details/{{i}}" class="btn btn-info">Details</a>
+                  <div class="d-flex justify-content-around">
+                    <a routerLink="/details/{{i}}" class="btn btn-lg btn-outline-success">Details</a>
+                    <button (click)="addToCart(item)" class="btn btn-lg btn-outline-secondary">Buy!</button>
+                  </div>
                 </div>
             </div>
         </div>

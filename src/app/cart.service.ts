@@ -37,4 +37,23 @@ export class CartService {
     })
     return total;
   }
+
+  onIncreaseQutty(index: number): void{
+    this.cartItems[index].quantity ++;
+  }
+
+  onDecreaseQutty(index: number): void{
+    if(this.cartItems[index].quantity > 0){
+        this.cartItems[index].quantity --;
+    }else{
+      this.cartItems[index].quantity=1; 
+      this.cartItems.splice(index, 1)
+    }  
+  }
+
+  onDeleteItem(index:number): void{
+    this.cartItems[index].quantity=1;
+    this.cartItems.splice(index, 1)
+  }
+
 }

@@ -10,12 +10,15 @@
             <h5 class='mb-2 fs-5'>{{animal.productName}}</h5>
         </div>
         <div class='col-3 d-flex'>
-            <button class='btn btn-success plusBtns'>+</button>
+            <button (click)="increaseQutty($index)" class='btn btn-success plusBtns'>+</button>
             <h5 class='m-2 quantity'>{{animal.quantity}}</h5>
-            <button class='btn btn-success minusBtns'>-</button>
+            <button (click)="decreaseQutty($index)" class='btn btn-success minusBtns'>-</button>
         </div>
         <div class='col-2'>
             <h5 class='mb-2 rowPrice fs-5'>{{(animal.price * animal.quantity).toFixed(2)}} €</h5>
+        </div>
+        <div class='col-1 text-end'>
+            <button (click)="deleteItem($index)" class='btn btn-danger deleteBtns'><i class="fa-solid fa-trash"></i></button>
         </div>
         <hr>
     </div> 
