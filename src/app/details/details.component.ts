@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import {AnimalModel} from '../shared/animal.model';
 import {animal} from '../shared/animal';
 import { CartService } from '../cart.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-details',
@@ -21,7 +22,13 @@ export class DetailsComponent {
  
   addToCart(){
     this.cartService.onAddToCart(this.animal);
-    alert("the item added to your cart");
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your order has been saved",
+      showConfirmButton: false,
+      timer: 1500
+    });
+    // alert("the item added to your cart");
   }
-
 }
